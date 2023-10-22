@@ -23,3 +23,13 @@ jobs:
     - name: Compile C code
       run: gcc -o hello_world Hello_world.c
       working-directory: ${{ github.workspace }}
+
+    - name: Move the new .exe to my repository
+      run: mv hello_world ${{ github.workspace }}/hello_world.exe
+      working-directory: ${{ github.workspace }}
+
+    - name: Archive the executable
+      uses: actions/upload-artifact@v2
+      with:
+        name: hello-world-executable
+        path: ${{ github.workspace }}/hello_world.exe

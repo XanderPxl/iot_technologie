@@ -34,24 +34,24 @@ jobs:
         name: hello-world-executable
         path: ${{ github.workspace }}/hello_world.exe
 
-    - name: Create .exe for the Pynq
-      run: |
-        apt install --yes {gcc,binutils}-arm-linux-gnueabihf
-      shell: bash
-    - name: Compile the C program
-      run: |
-        docker run --rm -v ${{ github.workspace }}:/mnt -w /mnt arm32v7/debian:bullseye bash -c "apt update && apt install -y gcc"
-        arm-linux-gnueabihf-gcc -o hello_world_ARMv7.exe Hello_world.c
-      shell: bash
+#    - name: Create .exe for the Pynq
+#      run: |
+#        apt install --yes {gcc,binutils}-arm-linux-gnueabihf
+#      shell: bash
+#    - name: Compile the C program
+#      run: |
+#        docker run --rm -v ${{ github.workspace }}:/mnt -w /mnt arm32v7/debian:bullseye bash -c "apt update && apt install -y gcc"
+#        arm-linux-gnueabihf-gcc -o hello_world_ARMv7.exe Hello_world.c
+#      shell: bash
 
-    - name: Move the new .exe to my repository
-      run: mv hello_world_ARMv7 ${{ github.workspace }}/hello_world_ARMv7.exe
-      working-directory: ${{ github.workspace }}
+#    - name: Move the new .exe to my repository
+#      run: mv hello_world_ARMv7 ${{ github.workspace }}/hello_world_ARMv7.exe
+#      working-directory: ${{ github.workspace }}
 
-    - name: Archive the executable
-      uses: actions/upload-artifact@v2
-      with:
-        name: hello-world-executable
-        path: ${{ github.workspace }}/hello_world_ARMv7.exe
+#    - name: Archive the executable
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: hello-world-executable
+#        path: ${{ github.workspace }}/hello_world_ARMv7.exe
 
 

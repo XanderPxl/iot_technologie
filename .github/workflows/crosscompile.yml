@@ -2,6 +2,8 @@ name: Post welcome comment
 on:
   pull_request:
     types: [opened]
+  push:
+    branches: [master, main]
 permissions:
   pull-requests: write
 jobs:

@@ -44,9 +44,9 @@ jobs:
         arm-linux-gnueabihf-gcc -o hello_world_ARMv7.exe Hello_world.c
       shell: bash
 
-    - name: Move the new .exe to my repository
-      run: mv hello_world_ARMv7 ${{ github.workspace }}/hello_world_ARMv7.exe
-      working-directory: ${{ github.workspace }}
+#    - name: Move the new .exe to my repository
+#      run: mv hello_world_ARMv7 ${{ github.workspace }}/hello_world_ARMv7.exe
+#      working-directory: ${{ github.workspace }}
 
     - name: Archive the executable
       uses: actions/upload-artifact@v2

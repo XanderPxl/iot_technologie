@@ -51,7 +51,7 @@ jobs:
     - name: Archive the executable
       uses: actions/upload-artifact@v2
       with:
-        name: hello-world-executable
+        name: hello-world-executable-arm
         path: ${{ github.workspace }}/hello_world_ARMv7.exe
 
 
